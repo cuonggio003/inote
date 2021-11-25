@@ -18,7 +18,8 @@ use App\Http\Controllers\LoginController;
 
 
 Route::get('/', [LoginController::class, 'showFormLogin'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
+Route::post('/login', [LoginController::class, 'login'])->name('home.login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::prefix('note')->group(function() {
     Route::get('/home', [NoteController::class, 'showNote'])->name('show.note');

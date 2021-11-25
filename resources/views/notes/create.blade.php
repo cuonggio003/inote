@@ -9,25 +9,38 @@
     @csrf
       <div class="form-field col-lg-6">
         <label for="">Tên bản ghi</label>
-        <input class="form-control" type="text" name="name"required>
+        <input type="text" name="name" value="{{ old('name') }}" class="form-control  @error('name') is-invalid @enderror" required>
+        @error('name')
+          <p class="text-danger">{{ $message }}</p>
+        @enderror
      </div> 
-    
-     <div class="form-field col-lg-12">
-        <label for="">Bản ghi</label>
-        <input class="form-control" id="Bản ghi" name="note" required>
-      </div>
-      <div class="form-field col-lg-12">
-        <label for=""> Tên người viết</label>
-        <input class="form-control" id=" Tên người viết" name="manager" required>
-      </div>
-      <div class="form-field col-lg-12">
+    <div class="form-field col-lg-12">
         <label for="">Trạng thái </label>
         <select class="form-control" id="Trạng thái" name="status" required>
             <option>Đã viết</option>
             <option> Đang viết</option>
             <option>Đã sửa</option>
           </select>
+          @error('status')
+          <p class="text-danger">{{ $message }}</p>
+        @enderror
       </div> 
+      <div class="form-field col-lg-12">
+        <label for=""> Tên người viết</label>
+        <input class="form-control" id=" Tên người viết" name="manager" required>
+        @error('manager')
+          <p class="text-danger">{{ $message }}</p>
+        @enderror
+      </div>
+      
+     <div class="form-field col-lg-12">
+        <label for="">Bản ghi</label>
+        <input class="form-control" id="Bản ghi" name="note" required>
+        @error('note')
+          <p class="text-danger">{{ $message }}</p>
+        @enderror
+      </div>
+   
       <div class="form-field col-lg-12">
         <button onclick="alert('Thêm mới thành công')" type="submit" class="btn btn-primary">Submit</button>
       </div>

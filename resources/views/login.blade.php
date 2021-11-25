@@ -15,7 +15,7 @@
 	<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
 	<section class="ftco-section">
 		<div class="container">
-        <form method="get" action="{{route('show.note')}}" class="signin-form">
+        <form method="post" action="{{route('home.login')}}" class="signin-form">
             @csrf
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">

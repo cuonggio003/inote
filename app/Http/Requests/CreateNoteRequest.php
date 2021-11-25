@@ -13,7 +13,7 @@ class CreateNoteRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -28,6 +28,17 @@ class CreateNoteRequest extends FormRequest
             'status' => 'required',
             'manager'=>'required',
             'note' => 'required',
+        ];
+        
+    }
+
+    public function massage()
+    {
+        return [
+            'name.required' => 'khong duoc de trong',
+            'status.required' => 'khong de trong',
+            'manager.required' => 'khong duoc de trong',
+            'note.required' => 'khong duoc de trong',
         ];
     }
 }

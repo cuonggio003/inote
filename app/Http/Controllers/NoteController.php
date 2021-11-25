@@ -49,7 +49,7 @@ class NoteController extends Controller
         return redirect()->route('show.note');
     }
 
-    function deletenote(Request $request, $id){
+    function deleteNote(Request $request, $id){
         
         $note = note::findOrFail($id);
        

@@ -15,6 +15,7 @@
                    <th>Tên bản ghi</th>
                    <th>Trạng thái</th>
                    <th>Tên người viết</th>
+                   <th></th>
                    <th>Bản note</th>
                  
                </tr>
@@ -25,6 +26,7 @@
                    <td>{{ $note->name}}</td>
                    <td>{{ $note->status}}</td>
                    <td>{{ $note->manager}}</td>
+                   <td></td>
                    <td>{{ $note->note}}</td>
                  
                  
